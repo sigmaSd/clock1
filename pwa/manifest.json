@@ -1,5 +1,5 @@
 {
-  "name": "My App",
+  "name": "Clock",
   "start_url": "/",
   "display": "standalone",
   "icons": [
