@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 28px;
+    }
+
+    #board {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      height: 200px;
+      font-size: inherit;
+    }
+
+    #sep {
+      width: 100%;
+      border: none;
+      color: black;
+      background-color: black;
+      border: 2px solid #ccc;
+      /* Change the color of the separator */
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="board">
+    <button id="p1">00:00</button>
+    <div id="sep">----------------------------------</div>
+    <button id="p2">00:00</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
