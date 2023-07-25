@@ -1,6 +1,7 @@
 const p1 = document.getElementById("p1")
 const p2 = document.getElementById("p2")
-if (!p1 || !p2) { throw "" }
+const reset = document.getElementById("reset")
+if (!p1 || !p2 || !reset) { throw "" }
 
 
 let time1 = 10 * 60
@@ -35,6 +36,19 @@ p2.onclick = () => {
     p1.innerText = `${formatTime(time1--)}`;
   }, 1000)
 
+
+}
+
+reset.onclick = () => {
+  turn = undefined
+  clearInterval(id1)
+  time1 = 10 * 60
+  p1.innerText = `${formatTime(time1)}`;
+  p1.style.backgroundColor = ""
+  clearInterval(id2)
+  time2 = 10 * 60
+  p2.innerText = `${formatTime(time2)}`;
+  p2.style.backgroundColor = ""
 
 }
 

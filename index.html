@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<script defer src="/pwa/app.js"></script>
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="/pwa/manifest.json" />
   <title>Countdown Timer</title>
   <style>
     body {
@@ -24,13 +20,7 @@
     }
 
     #sep {
-      width: 100%;
-      border: none;
-      color: black;
-      background-color: black;
-      border: 2px solid #ccc;
-      /* Change the color of the separator */
-      margin: 20px 0;
+      margin: 10px 0;
     }
   </style>
 </head>
@@ -38,7 +28,11 @@
 <body>
   <div id="board">
     <button id="p1">00:00</button>
-    <div id="sep">----------------------------------</div>
+    <div id="sep">
+      <button id="reset" style="height: 50px; background-color: white;">
+        <img style="width: 40px; background-color: white" ;" src="assets/reset.png"></img>
+      </button>
+    </div>
     <button id="p2">00:00</button>
   </div>
 
