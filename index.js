@@ -49,7 +49,6 @@ reset.onclick = () => {
   time2 = 10 * 60
   p2.innerText = `${formatTime(time2)}`;
   p2.style.backgroundColor = ""
-
 }
 
 function formatTime(seconds) {

@@ -6,7 +6,7 @@
   <style>
     body {
       text-align: center;
-      font-size: 28px;
+      font-size: 8rem;
     }
 
     #board {
@@ -15,12 +15,12 @@
     }
 
     button {
-      height: 200px;
+      flex-grow: 1;
       font-size: inherit;
     }
 
     #sep {
-      margin: 10px 0;
+      margin: 10px;
     }
   </style>
 </head>
@@ -29,9 +29,7 @@
   <div id="board">
     <button id="p1">00:00</button>
     <div id="sep">
-      <button id="reset" style="height: 50px; background-color: white;">
-        <img style="width: 40px; background-color: white" ;" src="assets/reset.png"></img>
-      </button>
+      <button style="color: orange; font-size: 0.5em; font-style: italic;" id="reset">Reset</button>
     </div>
     <button id="p2">00:00</button>
   </div>
