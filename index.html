@@ -30,7 +30,7 @@
   </style>
 </head>
 
-<body>
+<body style="display: none;">
   <div id="board">
     <button style="transform: rotate(180deg);" id="p1">10:00</button>
     <div id="sep" style="display:flex; flex-direction: row;">
@@ -49,6 +49,7 @@
 
     // Call the function initially to set the height
     setBodyHeight();
+    document.body.style.display = "block"
 
     // Attach an event listener to resize the height if the window is resized
     window.addEventListener('resize', setBodyHeight);
