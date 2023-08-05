@@ -8,14 +8,10 @@
   <link rel="manifest" href="/pwa/manifest.json" />
   <title>Countdown Timer</title>
   <style>
-    html,
     body {
       margin: 0;
       overflow: hidden;
       min-height: 100%;
-    }
-
-    body {
       text-align: center;
       font-size: 8rem;
     }
@@ -23,6 +19,7 @@
     #board {
       display: flex;
       flex-direction: column;
+      min-height: 100%;
     }
 
     button {
@@ -46,6 +43,19 @@
   </div>
 
   <script src="index.js"></script>
+  <script>
+    // Function to set the body height to the window height
+    function setBodyHeight() {
+      const windowHeight = window.innerHeight;
+      document.body.style.height = `${windowHeight}px`;
+    }
+
+    // Call the function initially to set the height
+    setBodyHeight();
+
+    // Attach an event listener to resize the height if the window is resized
+    window.addEventListener('resize', setBodyHeight);
+  </script>
 </body>
 
 </html>
