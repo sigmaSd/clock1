@@ -1,7 +1,9 @@
+const board = document.getElementById("board")
 const p1 = document.getElementById("p1")
 const p2 = document.getElementById("p2")
 const reset = document.getElementById("reset")
-if (!p1 || !p2 || !reset) { throw "" }
+const settings = document.getElementById("settings")
+if (!board || !p1 || !p2 || !reset || !settings) { throw "" }
 
 
 let time1 = 10 * 60
@@ -41,17 +43,23 @@ p2.onclick = () => {
 
 }
 
-reset.onclick = () => {
+function resetFn(newTime = 10 * 60) {
   turn = undefined
   clearInterval(id1)
-  time1 = 10 * 60
+  time1 = newTime
   p1.innerText = `${formatTime(time1)}`;
   p1.style.backgroundColor = ""
   clearInterval(id2)
-  time2 = 10 * 60
+  time2 = newTime
   p2.innerText = `${formatTime(time2)}`;
   p2.style.backgroundColor = ""
+
+  // in case settings menu changed this
+  board.style.display = "flex"
+  document.body.style.overflow = "hidden"
+  document.body.style.fontSize = "8rem"
 }
+reset.onclick = () => resetFn()
 
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
@@ -59,3 +67,23 @@ function formatTime(seconds) {
   return `${minutes.toString().padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
 }
 
+settings.onclick = () => {
+  const popup = document.createElement('div');
+  popup.id = 'popup';
+  popup.innerHTML = `
+    <h2>Set Time</h2>
+    <label for="timeInput">Enter time (in seconds):</label>
+    <input type="number" id="timeInput" value="600" min="1" required>
+    <button onclick="adjustTime(timeInput.value)">OK</button>
+  `;
+
+  board.style.display = "none"
+  document.body.style.overflow = "visible"
+  document.body.style.fontSize = "16px"
+  document.body.appendChild(popup);
+}
+
+function adjustTime(newTime) {
+  popup.remove()
+  resetFn(newTime)
+}
