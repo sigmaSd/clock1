@@ -17,7 +17,7 @@ p1.onclick = () => {
   turn = "p2"
   clearInterval(id1)
   p1.style.backgroundColor = ""
-  p2.style.backgroundColor = "#38800e"
+  p2.style.backgroundColor = "#c1df55"
   id2 = setInterval(() => {
     p2.innerText = `${formatTime(time2--)}`;
   }, 1000)
@@ -31,7 +31,7 @@ p2.onclick = () => {
   turn = "p1"
   clearInterval(id2)
   p2.style.backgroundColor = ""
-  p1.style.backgroundColor = "#38800e"
+  p1.style.backgroundColor = "#c1df55"
   id1 = setInterval(() => {
     p1.innerText = `${formatTime(time1--)}`;
   }, 1000)
