@@ -22,13 +22,10 @@
       min-height: 100%;
     }
 
-    button {
+    #p1,
+    #p2 {
       flex-grow: 1;
       font-size: inherit;
-    }
-
-    #sep {
-      margin: 10px;
     }
   </style>
 </head>
@@ -36,8 +33,8 @@
 <body>
   <div id="board">
     <button style="transform: rotate(180deg);" id="p1">10:00</button>
-    <div id="sep">
-      <button style="color: orange; font-size: 0.5em; font-style: italic;" id="reset">Reset</button>
+    <div id="sep" style="display:flex; flex-direction: row;">
+      <button style="display: block; width: 100%; font-weight: bold;" id="reset">Reset</button>
     </div>
     <button id="p2">10:00</button>
   </div>
